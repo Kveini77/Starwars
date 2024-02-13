@@ -24,7 +24,8 @@ class Game(arcade.Window):
     def __init__(self, width, height, title):
         super().__init__(width, height, title)
         self.bg = arcade.load_texture("background.jpg")
-        self.flacon = Falcon()
+        self.falcon = Falcon()
+        self.meteor = Meteor()
 
         self.setup()
 
@@ -36,9 +37,11 @@ class Game(arcade.Window):
         arcade.draw_texture_rectangle(SCREEN_WIDTH/2, SCREEN_HEIGHT/2,
                                       SCREEN_WIDTH, SCREEN_HEIGHT,
                                       self.bg)
-        self.flacon.draw()
+        self.meteor.draw()
+        self.falcon.draw()
 
-    def update(self, delta_time: float):...
+    def update(self, delta_time: float): ...
+
 
 window = Game(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
 
